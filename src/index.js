@@ -6,6 +6,7 @@ import pool from './config/db.js';
 import express from 'express';
 import cors from 'cors';
 import userRoutes from "./routes/userRoutes.js"
+import authRoutes from "./routes/authRoutes.js"
 import errorHandling from "./middlewares/error.handler.js"
 import createUserTable from './data/createUserTable.js';
 
@@ -19,6 +20,7 @@ app.use(cors());
 
 // Routes
 app.use("/api", userRoutes)
+app.use("/api", authRoutes)
 
 // Errors handling middleware
 app.use(errorHandling)
